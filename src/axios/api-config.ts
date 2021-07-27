@@ -1,11 +1,9 @@
 import axios from "axios";
 
-export const api = axios.create({
-  baseURL: "http://localhost:3000/api/",
-});
+export const api = axios.create();
 
 export const EndPoints = {
-  heroes: "heroes",
-  antiHeroes: "anti-heroes",
-  villains: "villains",
+  heroes: "/api/heroes",
+  antiHeroes: "/api/anti-heroes",
+  villains: "/api/villains",
 };
