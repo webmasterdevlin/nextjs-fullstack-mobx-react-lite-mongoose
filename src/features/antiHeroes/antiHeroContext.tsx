@@ -61,7 +61,7 @@ const AntiHeroContext = () => {
     // asynchronous actions also. Optimistic UI update. No need for showing loader/spinner.
     async deleteAntiHeroAction(id: string) {
       const previousAntiHeroes = store.antiHeroes;
-      store.antiHeroes = store.antiHeroes.filter((ah) => ah.id !== id);
+      store.antiHeroes = store.antiHeroes.filter((ah) => ah._id !== id);
       try {
         await deleteAxios(EndPoints.antiHeroes, id);
       } catch (e) {

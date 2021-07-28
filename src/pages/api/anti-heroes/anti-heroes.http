@@ -4,7 +4,7 @@ GET https://jsonplaceholder.typicode.com/posts/
 GET http://localhost:3000/api/anti-heroes
 
 ###
-DELETE http://localhost:3000/api/anti-heroes/60fc10e87b929e98490fe8cc
+DELETE http://localhost:3000/api/anti-heroes/610120fabbd181f895dea63e
 
 ###
 POST http://localhost:3000/api/anti-heroes

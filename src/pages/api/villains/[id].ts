@@ -13,6 +13,7 @@ const handler = nc()
       const id = req.query.id as string;
       await villainFindByIdAndRemove(id);
       res.statusCode = 204;
+      res.send("DELETED");
     } catch (e) {
       res.statusCode = 500;
       res.json(e);
@@ -23,6 +24,7 @@ const handler = nc()
       const id = req.query.id as string;
       await villainFindByIdAndUpdate(id, req.body);
       res.statusCode = 200;
+      res.send("UPDATED");
     } catch (e) {
       res.statusCode = 500;
       res.json(e);
