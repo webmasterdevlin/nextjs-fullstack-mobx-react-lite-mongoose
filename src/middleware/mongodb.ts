@@ -1,9 +1,8 @@
 import mongoose from "mongoose";
 
-const connectDB = (handler) => async (req, res) => {
+const connectDB = async (req, res, next) => {
   if (mongoose.connections[0].readyState) {
-    console.log("DB connection already open");
-    return handler(req, res);
+    return next();
   }
 
   mongoose.connect(
@@ -16,8 +15,8 @@ const connectDB = (handler) => async (req, res) => {
     },
     () => console.log(" Mongoose is connected")
   );
-  console.log("connected to mongodb");
-  return handler(req, res);
+
+  return next();
 };
 
 export default connectDB;

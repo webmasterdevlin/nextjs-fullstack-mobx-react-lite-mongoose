@@ -2,12 +2,14 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import nc from "next-connect";
 
 import connectDB from "src/middleware/mongodb";
+
 import {
   antiHeroFindByIdAndRemove,
   antiHeroFindByIdAndUpdate,
 } from "src/services/api/antiHeroService";
 
 const handler = nc()
+  .use(connectDB)
   .delete(async (req: NextApiRequest, res: NextApiResponse) => {
     try {
       const id = req.query.id as string;
@@ -31,4 +33,4 @@ const handler = nc()
     }
   });
 
-export default connectDB(handler);
+export default handler;

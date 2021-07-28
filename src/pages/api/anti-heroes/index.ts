@@ -5,6 +5,7 @@ import connectDB from "src/middleware/mongodb";
 import { antiHeroFind, antiHeroSave } from "src/services/api/antiHeroService";
 
 const handler = nc()
+  .use(connectDB)
   .get(async (req: NextApiRequest, res: NextApiResponse) => {
     try {
       const antiHeroes = await antiHeroFind();
@@ -26,4 +27,4 @@ const handler = nc()
     }
   });
 
-export default connectDB(handler);
+export default handler;

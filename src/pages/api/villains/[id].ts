@@ -8,6 +8,7 @@ import {
 } from "src/services/api/villainService";
 
 const handler = nc()
+  .use(connectDB)
   .delete(async (req: NextApiRequest, res: NextApiResponse) => {
     try {
       const id = req.query.id as string;
@@ -31,4 +32,4 @@ const handler = nc()
     }
   });
 
-export default connectDB(handler);
+export default handler;
