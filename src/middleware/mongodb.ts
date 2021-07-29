@@ -1,12 +1,13 @@
 import mongoose from "mongoose";
+import getConfig from "next/config";
 
 const connectDB = async (req, res, next) => {
   if (mongoose.connections[0].readyState) {
     return next();
   }
-
+  const { serverRuntimeConfig } = getConfig();
   mongoose.connect(
-    "mongodb://localhost:27017/mydb",
+    serverRuntimeConfig.mongo.endpoint,
     {
       useUnifiedTopology: true,
       useFindAndModify: false,

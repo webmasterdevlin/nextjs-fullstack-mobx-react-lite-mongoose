@@ -3,5 +3,8 @@
 ## Database
 MongoDb
 
+### environment variables storage
+.env.local
 
+#### Screenshot
 ![screenshot](./screenshot.png)
