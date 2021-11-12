@@ -84,7 +84,7 @@ const AntiHeroContext = () => {
 
     /*computed values i.e. derived state*/
     get totalAntiHeroesCount() {
-      return store.antiHeroes.length;
+      return store?.antiHeroes?.length;
     },
   }));
 

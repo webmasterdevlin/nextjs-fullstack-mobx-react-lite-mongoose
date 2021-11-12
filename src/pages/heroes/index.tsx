@@ -86,7 +86,7 @@ const HeroesPage = observer(() => {
           ))
         )}
       </>
-      {heroStore.heroes.length === 0 && !heroStore.loading && (
+      {heroStore?.heroes?.length === 0 && !heroStore?.loading && (
         <Button
           data-testid={"refetch-button"}
           className={classes.button}

@@ -38,7 +38,7 @@ const VillainContext = () => {
 
     /*computed values i.e. derived state*/
     get totalVillainsCount() {
-      return store.villains.length;
+      return store?.villains?.length;
     },
 
     /*asynchronous actions*/

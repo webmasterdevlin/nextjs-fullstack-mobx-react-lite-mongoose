@@ -38,7 +38,7 @@ const HeroContext = () => {
 
     /*computed values i.e. derived state*/
     get totalHeroesCount() {
-      return store.heroes.length;
+      return store?.heroes?.length;
     },
 
     /*asynchronous actions*/
